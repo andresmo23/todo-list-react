@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #f5f5f5;
+  --Text-primary: #333333;
+  --Btn-primario: #007bff;
+  --Btn-eliminar: #dc3545;
+  --Btn-cancelar: #6c757d;
+  --Btn-completar: #04df37;
+  --Priortaria: #ffc107;
+  --Secundaria: #17a2b8;
+  --Modal-background: rgba(0, 0, 0, 0.5);
+  --Modal-content: #ffffff;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-primary);
+  color: var(--Text-primary);
+  padding: var(--spacing-xs) 0;
+  line-height: 1.5;
+}
+
+/* ------------- estilos globales ----------- */
+h2 {
+  font-size: clamp(1.25rem, 5vw, 1.5rem);
+  color: #0259b6;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: 500;
+}
+
+input {
+  border: 1px solid #6c757d;
+  border-radius: 4px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+select {
+  font-family: "Roboto", sans-serif;
+  padding: 0.29rem;
+  font-size: 1rem;
+  border: 1px solid #6c757d;
+  border-radius: 4px;
+}
+
+.btn {
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+
+/* ------- main App.jsx ---------*/
+main {
+  max-width: 900px;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: var(--spacing-xs);
+}
+
+main h1 {
+  color: #007bff;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  margin-top: 0.5rem;
+}
+
+.section-show-tasks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: var(--spacing-xs);
+}
+
+/* ----------- TaskFilter ---------- */
+.container-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* ----------- P en App.jsx ---------- */
+.message-conditional {
+  font-weight: 600;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
+
+/*-------- TaskList y TaskItem ------- */
+.tasks-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tasks-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-weight: 400;
+  padding: 5px 2px;
+  border-radius: 4px;
+  border: 1px solid blue;
+}
+
+.task-status {
+  display: flex;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.task-prioritaria {
+  color: var(--Priortaria);
+}
+
+.task-secundaria {
+  color: var(--Secundaria);
+}
+
+.task-completed {
+  background-color: rgba(0, 0, 0, 0.151);
+  opacity: 0.7;
+  transition: background 0.4s ease-in, opacity 0.4s ease-in;
+}
+
+.task-pending {
+  transition: background 0.4s ease-in, opacity 0.4s ease-in;
+}
+
+.task-container-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-task-completed {
+  background-color: var(--Btn-cancelar);
+  transition: background 0.4s ease;
+}
+.btn-task-completed:hover {
+  background-color: #575757;
+}
+
+.btn-task-edit {
+  background-color: var(--Btn-primario);
+  transition: background 0.4s ease;
+}
+.btn-task-edit:hover {
+  background-color: #0151a7;
+}
+
+.btn-task-delete {
+  background-color: var(--Btn-eliminar);
+  transition: background 0.4s ease;
+}
+.btn-task-delete:hover {
+  background-color: #960412;
+}
+
+/** ----------- media querys por IA --------- */
+@media (min-width: 768px) {
+  /* Centrar y limitar el ancho del main */
+  main {
+    padding: var(--spacing-lg);
+    margin: 2rem auto;
+  }
+
+  /* TaskItem: mostrar en fila */
+  .tasks-list li {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    padding: var(--spacing-sm);
+  }
+
+  .tasks-list li p {
+    flex: 3;
+  }
+
+  /* Botones de tareas en fila */
+  .task-container-buttons {
+    flex: 1;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  /* Task status en fila */
+  .task-status {
+    flex: 2;
+    flex-direction: row;
+    gap: var(--spacing-sm);
+  }
+
+  /* TaskFilter: más separación horizontal */
+  .container-filter {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  /* Formulario: input y select en fila */
+  .form {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: var(--spacing-sm);
+  }
+
+  .form input {
+    flex: 2;
+  }
+
+  .form select {
+    flex: 1;
+  }
+
+  .btn-add {
+    flex-shrink: 0;
+  }
+
+  /* Modal: más espacio y alineación */
+  .container-modal {
+    padding: var(--spacing-md);
+    max-width: 600px;
+  }
+
+  .modal-container-btn {
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+  }
+}
