@@ -10,7 +10,7 @@
   flex-flow: row wrap;
   gap: 1.5rem;
   justify-content: space-between;
-  align-items: center;
+  align-items: self-start;
 }
 
 .input-wrapper {
@@ -31,9 +31,17 @@
   flex: 1;
 }
 
+.container-select {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1 1 30%;
+  min-width: 180px;
+}
+
 .btn-add {
   background-color: var(--Btn-completar);
-  transition: background 0.4s ease-in;
+  transition: background 0.3s ease-in;
 }
 .btn-add:hover {
   background-color: #029b26;

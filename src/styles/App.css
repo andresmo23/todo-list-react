@@ -218,9 +218,13 @@ main h1 {
   /* TaskFilter: más separación horizontal */
   .container-filter {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     gap: var(--spacing-sm);
+  }
+
+  .container-form {
+    padding: 2rem 1rem;
   }
 
   /* Formulario: input y select en fila */
@@ -228,14 +232,6 @@ main h1 {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: var(--spacing-sm);
-  }
-
-  .form input {
-    flex: 2;
-  }
-
-  .form select {
-    flex: 1;
   }
 
   .btn-add {
@@ -246,6 +242,10 @@ main h1 {
   .container-modal {
     padding: var(--spacing-md);
     max-width: 600px;
+  }
+
+  .modal-form {
+    flex-wrap: wrap;
   }
 
   .modal-container-btn {
