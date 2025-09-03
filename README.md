@@ -4,9 +4,10 @@ Aplicación web desarrollada con **React** que permite gestionar tareas de forma
 
 ---
 
-## 🌐 Despliegue
+## 🔗 Demo en vivo
 
-> Puedes incluir capturas de pantalla aquí si lo deseas, mostrando el formulario, la lista de tareas y el modal de edición.
+Puedes ver la aplicación funcionando aquí:  
+👉 [todo-list-react en Vercel](https://todo-list-react-andresmo.vercel.app/)
 
 ---
 
