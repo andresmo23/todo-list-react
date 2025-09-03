@@ -4,7 +4,7 @@ Aplicación web desarrollada con **React** que permite gestionar tareas de forma
 
 ---
 
-## 🌐 DEspliegue
+## 🌐 Despliegue
 
 > Puedes incluir capturas de pantalla aquí si lo deseas, mostrando el formulario, la lista de tareas y el modal de edición.
 
